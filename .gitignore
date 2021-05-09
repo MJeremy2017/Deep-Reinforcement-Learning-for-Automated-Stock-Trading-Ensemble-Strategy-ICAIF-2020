@@ -1,6 +1,6 @@
 # Custom config
 results/
-
+.idea
 
 # remove DS_Store
 **/.DS_Store
