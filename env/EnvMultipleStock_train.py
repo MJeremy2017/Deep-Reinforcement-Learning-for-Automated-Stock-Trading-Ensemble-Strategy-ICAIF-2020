@@ -37,9 +37,9 @@ class StockEnvTrain(gym.Env):
         # +[macd 1-30]+ [rsi 1-30] + [cci 1-30] + [adx 1-30]
         self.observation_space = spaces.Box(low=0, high=np.inf, shape=(181,))  # state space
         # load data from a pandas dataframe
-        self.data = self.df.loc[self.day, :]
+        self.data = self.df.loc[self.day, :]  # grab the data of the day
         self.terminal = False
-        # initalize state
+        # initialize state
         self.state = [INITIAL_ACCOUNT_BALANCE] + \
                      self.data.adjcp.values.tolist() + \
                      [0] * STOCK_DIM + \
